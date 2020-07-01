@@ -1,0 +1,37 @@
+{
+  "name": "ts-form-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx webpack-dev-server --content-base src",
+    "build": "npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szado/ts-form-builder.git"
+  },
+  "author": "Jarosław Żak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szado/ts-form-builder/issues"
+  },
+  "homepage": "https://github.com/szado/ts-form-builder#readme",
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.1.3",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
