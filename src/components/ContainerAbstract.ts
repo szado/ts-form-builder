@@ -1,7 +1,8 @@
 import {IContainer} from "./IContainer";
 import {IComponent} from "./IComponent";
+import {ComponentAbstract} from "./ComponentAbstract";
 
-export abstract class ContainerAbstract implements IContainer {
+export abstract class ContainerAbstract extends ComponentAbstract implements IContainer {
     public components: IComponent[] = [];
 
     public addComponent(...component: IComponent[]): IContainer {

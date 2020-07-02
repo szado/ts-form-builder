@@ -22,7 +22,7 @@ export class Form extends ContainerAbstract {
         return found;
     }
 
-    protected createContainerElement(): HTMLElement {
-        return new HTMLFormElement();
+    protected createContainerElement(): HTMLFormElement {
+        return document.createElement('form');
     }
 }

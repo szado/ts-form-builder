@@ -1,12 +1,12 @@
-import {IComponent} from "./IComponent";
 import {ILabelable} from "./ILabelable";
+import {ComponentAbstract} from "./ComponentAbstract";
 
-export class Label implements IComponent {
+export class Label extends ComponentAbstract {
     public text: string;
     public element: ILabelable;
 
-    render(): HTMLElement {
-        let element = new HTMLLabelElement();
+    render(): HTMLLabelElement {
+        let element = document.createElement('label');
         element.innerHTML = this.text;
         element.htmlFor = this.element.id;
         return element;

@@ -1,13 +1,25 @@
 import {IFormField} from "./IFormField";
 import {Label} from "./Label";
+import {ComponentAbstract} from "./ComponentAbstract";
 
-export abstract class FormFieldAbstract implements IFormField {
+export abstract class FormFieldAbstract extends ComponentAbstract implements IFormField {
+    id: string;
     label: Label;
     name: string;
     value: string;
 
+    public constructor(options?: object) {
+        super(options);
+        this.id || this.generateId();
+        this.name = this.name ?? '';
+        this.value = this.value ?? '';
+        if (this.label !== undefined) {
+            this.label.element = this;
+        }
+    }
+
     public render(): HTMLElement {
-        let div = new HTMLDivElement();
+        let div = document.createElement('div');
         let field = this.createFieldElement();
         field.addEventListener(this.getValueBindingEventName(field), element => {
             this.value = (element.target as HTMLFormElement).value;
@@ -37,4 +49,9 @@ export abstract class FormFieldAbstract implements IFormField {
         HTMLInputElement
         | HTMLTextAreaElement
         | HTMLSelectElement;
+
+    private generateId(): void
+    {
+        this.id = 'field_' + (this.name ? this.name + '_' : '') + Math.random().toString(10).substr(2);
+    }
 }

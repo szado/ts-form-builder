@@ -7,7 +7,7 @@ export class TextAreaField extends FormFieldAbstract {
     value: string;
 
     protected createFieldElement(): HTMLTextAreaElement {
-        let el = new HTMLTextAreaElement();
+        let el = document.createElement('textarea');
         el.name = this.name;
         el.innerHTML = this.value;
         return el;
