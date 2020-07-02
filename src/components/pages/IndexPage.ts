@@ -8,6 +8,7 @@ export class IndexPage extends PageAbstract {
         super();
         this.addComponent(
             new Paragraph({html: 'Witaj w aplikacji FormBuilder. Wybierz podstronę:'}),
+            new Paragraph({html: '<a href="new-document.html">Wypełnij formularz</a>'}),
             new Paragraph({html: '<a href="documents-list.html">Lista wypełnionych formularzy</a>'}),
         );
     }

@@ -1,4 +1,4 @@
-import {IIdentificable} from "./IIdentificable";
+import {IIdentificable} from "../IIdentificable";
 
 export interface ILabelable extends IIdentificable {
 

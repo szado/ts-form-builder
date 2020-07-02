@@ -1,4 +1,4 @@
-import {ILabelable} from "../ILabelable";
+import {ILabelable} from "./ILabelable";
 import {ComponentAbstract} from "../ComponentAbstract";
 
 export class Label extends ComponentAbstract {
