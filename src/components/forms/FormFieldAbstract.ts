@@ -1,6 +1,6 @@
 import {IFormField} from "./IFormField";
 import {Label} from "./Label";
-import {ComponentAbstract} from "./ComponentAbstract";
+import {ComponentAbstract} from "../ComponentAbstract";
 
 export abstract class FormFieldAbstract extends ComponentAbstract implements IFormField {
     id: string;

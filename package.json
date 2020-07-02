@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/szado/ts-form-builder#readme",
   "dependencies": {
-    "tsc": "^1.20150623.0"
+    "tsc": "^1.20150623.0",
+    "uuid": "^8.2.0"
   },
   "devDependencies": {
+    "@types/uuid": "^8.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.2",
     "node-sass": "^4.13.1",

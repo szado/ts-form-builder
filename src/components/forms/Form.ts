@@ -1,6 +1,6 @@
-import {ContainerAbstract} from "./ContainerAbstract";
+import {ContainerAbstract} from "../ContainerAbstract";
 import {IFormField} from "./IFormField";
-import {IComponent} from "./IComponent";
+import {IComponent} from "../IComponent";
 
 export class Form extends ContainerAbstract {
     public getFields(): IFormField[] {
