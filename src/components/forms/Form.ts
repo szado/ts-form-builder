@@ -2,7 +2,26 @@ import {ContainerAbstract} from "../ContainerAbstract";
 import {IFormField} from "./IFormField";
 import {IComponent} from "../IComponent";
 
+export interface FormFieldSummary {
+    name: string;
+    value: string;
+    labelText: string;
+}
+
 export class Form extends ContainerAbstract {
+    public getDocument(): FormFieldSummary[]
+    {
+        let document: FormFieldSummary[] = [];
+        this.getFields().forEach((field: IFormField) => {
+            document.push({
+                name: field.name,
+                value: field.value,
+                labelText: field.label ? field.label.text: ''
+            });
+        });
+        return document;
+    }
+
     public getFields(): IFormField[] {
         return this.findComponentsBy((component: IComponent) => {
              return component.hasOwnProperty('label')
@@ -22,7 +41,7 @@ export class Form extends ContainerAbstract {
         return found;
     }
 
-    protected createContainerElement(): HTMLFormElement {
-        return document.createElement('form');
+    protected createContainerElement(): HTMLDivElement {
+        return document.createElement('div');
     }
 }
