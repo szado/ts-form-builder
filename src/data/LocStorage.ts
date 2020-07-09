@@ -10,18 +10,27 @@ export class LocStorage implements IDataStorage {
         this.data = localStorage[LOCAL_STORAGE_KEY] ? JSON.parse(localStorage[LOCAL_STORAGE_KEY]) : {};
     }
 
-    getDocuments(): string[] {
+    public getDocuments(): string[] {
         return Object.keys(this.data);
     }
 
-    loadDocument(id: string): any {
+    public loadDocument(id: string): any {
         return this.data[id];
     }
 
-    saveDocument(document: any): string {
+    public saveDocument(document: any): string {
         let id = uuidv4();
         this.data[id] = document;
-        localStorage[LOCAL_STORAGE_KEY] = JSON.stringify(this.data);
+        this.storeData();
         return id;
+    }
+
+    public removeDocument(id: string): void {
+        delete this.data[id];
+        this.storeData();
+    }
+
+    private storeData(): void {
+        localStorage[LOCAL_STORAGE_KEY] = JSON.stringify(this.data);
     }
 }

@@ -1,6 +1,8 @@
 import {PageAbstract} from "./PageAbstract";
 import {LocStorage} from "../../data/LocStorage";
 import {Paragraph} from "../others/Paragraph";
+import {Button} from "../forms/Button";
+import {HorizontalLine} from "../others/HorizontalLine";
 
 export class DocumentsListPage extends PageAbstract {
     title: string = 'FormBuilder - wypełnione formularze';
@@ -28,9 +30,19 @@ export class DocumentsListPage extends PageAbstract {
 //                 }));
 //             });
 
-            this.addComponent(new Paragraph({
-                html: '<a href="edit-document.html?id=' + id + '">Formularz id: ' + id + '</a>'
-            }));
+            this.addComponent(
+                new Paragraph({
+                    html: '<a href="edit-document.html?id=' + id + '">Formularz id: ' + id + '</a>'
+                }),
+                new Button({
+                    text: '❌ Usuń',
+                    handler: () => {
+                        documents.removeDocument(id);
+                        location.reload();
+                    }
+                }),
+                new HorizontalLine()
+            );
         });
     }
 }
