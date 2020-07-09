@@ -6,8 +6,6 @@ export abstract class ComponentAbstract implements IComponent {
             Object.keys(options).forEach(key => {
                 // @ts-ignore
                 this[key] = options[key];
-                // @ts-ignore
-                console.log(key, options[key])
             });
         }
     }
