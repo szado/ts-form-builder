@@ -1,7 +1,9 @@
 import {IPage} from "./IPage";
 import {ContainerAbstract} from "../ContainerAbstract";
+import {Router} from "../../utilities/Router";
 
 export abstract class PageAbstract extends ContainerAbstract implements IPage {
+    public router: Router|null = null;
     abstract title: string;
     protected homeButton: boolean = false;
 

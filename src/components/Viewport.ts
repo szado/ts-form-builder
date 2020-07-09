@@ -5,6 +5,12 @@ export class Viewport {
         document.body.childNodes.forEach(node => {
             node.remove();
         });
+
+        if (page === null) {
+            document.body.innerText = '404 - not found';
+            return;
+        }
+
         document.body.append(page.render());
         document.head.querySelector('title').innerText = page.title;
     }
