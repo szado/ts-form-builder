@@ -18,4 +18,8 @@ export abstract class PageAbstract extends ContainerAbstract implements IPage {
         element.innerHTML = html;
         return element;
     };
+
+    init(router: Router): void {
+        this.router = router;
+    }
 }

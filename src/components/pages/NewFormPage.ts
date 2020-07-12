@@ -13,8 +13,7 @@ export class EditDocumentPage extends PageAbstract {
         this.createForm();
     }
 
-    private createForm(): void
-    {
+    private createForm(): void {
         const howManyFields = Number.parseInt(this.router.getParam('fields'));
         if (isNaN(howManyFields)) {
             this.addComponent(new Paragraph({html: 'Podaj poprawną liczbę pól formularza'}));

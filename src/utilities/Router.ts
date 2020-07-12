@@ -11,10 +11,13 @@ export class Router {
 
     public getPage(): IPage|null {
         let page = this.mapper(document.location.pathname);
+
         if (!page) {
             return null;
         }
-        page.router = this;
+
+        page.init(this);
+
         return page;
     }
 }

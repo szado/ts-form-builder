@@ -4,4 +4,5 @@ import {Router} from "../../utilities/Router";
 export interface IPage extends IComponent {
     router: Router;
     title: string;
+    init(router: Router): void;
 }
