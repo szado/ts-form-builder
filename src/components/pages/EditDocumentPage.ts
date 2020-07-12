@@ -10,10 +10,10 @@ export class EditDocumentPage extends PageAbstract {
 
     public constructor() {
         super();
-        //this.createForm();
+        this.createForm();
     }
 
-    private createList(): void
+    private createForm(): void
     {
         let documents = new LocStorage();
         documents.getDocuments().forEach((id: string) => {
