@@ -1,13 +1,11 @@
 import {PageAbstract} from "./PageAbstract";
 import {LocStorage} from "../../data/LocStorage";
 import {Paragraph} from "../others/Paragraph";
-import {Button} from "../forms/Button";
-import {HorizontalLine} from "../others/HorizontalLine";
 import {FormFieldSummary} from "../forms/Form";
 import {Router} from "../../utilities/Router";
 
 export class EditDocumentPage extends PageAbstract {
-    title: string = 'FormBuilder - edycja formularza';
+    title: string = 'FormBuilder - podgląd formularza';
     homeButton: boolean = true;
 
     public init(router: Router) {
